@@ -20,7 +20,7 @@ public class Main {
         boolean vVal = true;
 
         do {
-            System.out.println("Menu de opciones:\n1.Agregar Arista\n2.Eliminar Vertice\n3.Eliminar Arista");
+            System.out.println("Menu de opciones:\n1.Agregar Arista\n2.Eliminar Arista\n3.Eliminar Vertice");
             System.out.println("4.Verificar si existe un vertice\n5.Verificar si existe una arista");
             System.out.println("6.Buscar si existe un camino entre dos nodos\n7.Imprimir grafo\n8.Salir");
             System.out.print("Ingrese su opcion: ");
@@ -28,9 +28,9 @@ public class Main {
 
             switch (opc) {
                 case 1:
-                    System.out.print("Ingrese el valor del nodo que va a ingresar: ");
+                    System.out.print("Ingrese el valor del vertice que va a ingresar: ");
                     src = sc.nextInt();
-                    System.out.print("Ingrese el nodo con el cual estara conectado: ");
+                    System.out.print("Ingrese el vertice con el cual estara conectado: ");
                     dest = sc.nextInt();
                     System.out.print("Ingrese el peso que tendra recorrer ese vertice: ");
                     weight = sc.nextInt();
@@ -39,43 +39,43 @@ public class Main {
                     limpiar();
                     break;
                 case 2:
-                    System.out.print("Ingrese el nodo fuente: ");
+                    System.out.print("Ingrese el vertice fuente: ");
                     src = sc.nextInt();
-                    System.out.print("Ingrese el nodo destino: ");
+                    System.out.print("Ingrese el vertice destino: ");
                     dest = sc.nextInt();
 
                     grafo.removeEdge(src, dest);
                     limpiar();
                     break;
                 case 3:
-                    System.out.println("Ingrese la arista que desea eliminar: ");
+                    System.out.print("Ingrese el vertice que desea eliminar: ");
                     a = sc.nextInt();
 
                     grafo.removeNode(a);
                     limpiar();
                     break;
                 case 4:
-                    System.out.print("Ingrese el nodo que desea buscar: ");
+                    System.out.print("Ingrese el vertice que desea buscar: ");
                     a = sc.nextInt();
-                    System.out.println("El nodo existe: " + grafo.hasNode(a));
+                    System.out.println("El vertice existe: " + grafo.hasNode(a));
                     limpiar();
                     break;
                 case 5:
-                    System.out.print("Ingrese el nodo fuente: ");
+                    System.out.print("Ingrese el vertice fuente: ");
                     src = sc.nextInt();
-                    System.out.print("Ingrese el nodo destino: ");
+                    System.out.print("Ingrese el vertice destino: ");
                     dest = sc.nextInt();
 
                     System.out
-                            .println("Existe un vertice entre " + src + " y " + dest + ": " + grafo.hasEdge(src, dest));
+                            .println("Existe una arista entre " + src + " y " + dest + ": " + grafo.hasEdge(src, dest));
                     limpiar();
                     break;
                 case 6:
-                    System.out.print("Ingrese el nodo fuente: ");
+                    System.out.print("Ingrese el vertice fuente: ");
                     src = sc.nextInt();
-                    System.out.print("Ingrese el nodo destino: ");
+                    System.out.print("Ingrese el vertice destino: ");
                     dest = sc.nextInt();
-                    System.out.println("Existe un camino desde el nodo " + src + " hasta el nodo " + dest + ": "
+                    System.out.println("Existe un camino desde el vertice " + src + " hasta el vertice " + dest + ": "
                             + grafo.hasPathDFS(src, dest));
                     limpiar();
                     break;
@@ -86,23 +86,14 @@ public class Main {
                 case 8:
                     vVal = false;
                     break;
+                case 9:
+                    grafo.listaAristas();
+                    limpiar();
+                    break;
                 default:
                     break;
             }
         } while (vVal == true);
-
-        // grafo.addEdge(0, 1, 4);
-        // grafo.addEdge(0, 2, 3);
-        // grafo.addEdge(1, 3, 2);
-        // grafo.addEdge(1, 2, 5);
-        // grafo.addEdge(2, 3, 7);
-        // grafo.addEdge(3, 4, 2);
-        // grafo.addEdge(4, 0, 4);
-        // grafo.addEdge(4, 1, 4);
-        // grafo.addEdge(4, 5, 6);
-        // grafo.printGraph();
-        // System.out.println(grafo.hasPathDFS(2, 1));
-
         sc.close();
     }
 }

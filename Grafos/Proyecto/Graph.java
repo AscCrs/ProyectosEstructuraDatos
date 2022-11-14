@@ -140,4 +140,11 @@ public class Graph<T> {
             System.out.println(key + " -> " + adyacencylist.get(key));
         }
     }
+    
+    // Imprime la lista de aristas
+    public void listaAristas(){
+        for(T key : adyacencylist.keySet()){
+            System.out.println("( " + key + " , " + adyacencylist.get(key) + " )");
+        }
+    }
 }
