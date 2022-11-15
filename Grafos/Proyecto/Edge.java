@@ -9,7 +9,9 @@ public class Edge<T> {
 		this.verticeConectado = v; 
 		this.peso = w;
 	}
-	
+	public T getVertice(){
+		return verticeConectado;
+	}
 	@Override
 	public String toString() {
 		return "(" + verticeConectado + "," + peso + ")";
