@@ -38,6 +38,7 @@ public class Graph<T> {
         LinkedList<Edge<T>> listAux = adyacencylist.get(a);
         for (Edge<T> edge : listAux) {
             if (edge.verticeConectado.equals(b))
+                System.out.println(edge.getVerticeConectado());
                 return edge;
         }
         return null;

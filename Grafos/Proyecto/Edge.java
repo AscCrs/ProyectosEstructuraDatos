@@ -9,6 +9,10 @@ public class Edge<T> {
 		this.verticeConectado = v; 
 		this.peso = w;
 	}
+
+	public T getVerticeConectado() {
+		return verticeConectado;
+	}
 	
 	@Override
 	public String toString() {
