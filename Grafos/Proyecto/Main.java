@@ -2,7 +2,7 @@ package Proyecto;
 
 import java.util.Scanner;
 
-public class Main {
+public class Main<T> {
     static Scanner sc = new Scanner(System.in);
 
     public static void limpiar() {
@@ -13,16 +13,15 @@ public class Main {
 
         System.out.println(clean);
     }
-
+    
     public static void main(String[] args) {
         Graph<Integer> grafo = new Graph<Integer>();
         int opc = 0, src = 0, dest = 0, weight = 0, a = 0;
         boolean vVal = true;
-
         do {
             System.out.println("Menu de opciones:\n1.Agregar Arista\n2.Eliminar Arista\n3.Eliminar Vertice");
             System.out.println("4.Verificar si existe un vertice\n5.Verificar si existe una arista");
-            System.out.println("6.Buscar si existe un camino entre dos nodos\n7.Imprimir grafo\n8.Salir");
+            System.out.println("6.Buscar si existe un camino entre dos nodos\n7.Imprimir grafo\n8.Imprimir Lista de Aristas\n9.Imprimir Matriz de Adyacencia\n10.Salir");
             System.out.print("Ingrese su opcion: ");
             opc = sc.nextInt();
 
@@ -80,15 +79,22 @@ public class Main {
                     limpiar();
                     break;
                 case 7:
+                    System.out.println("--- GRAFO ---");
                     grafo.printAdyacencyList();
                     limpiar();
                     break;
                 case 8:
-                    vVal = false;
+                    System.out.println("--- LISTA DE ARISTAS ---");
+                    grafo.printEdgelist();
+                    limpiar();
                     break;
                 case 9:
-                    grafo.listaAristas();
+                    System.out.println("--- MATRIZ DE ADYACENCIA ---");
+                    grafo.printAdyacencyMatrix();
                     limpiar();
+                    break;                                        
+                case 10:
+                    vVal = false;
                     break;
                 default:
                     break;

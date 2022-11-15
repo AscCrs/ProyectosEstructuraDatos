@@ -143,9 +143,34 @@ public class Graph<T> {
     }
     
     // Imprime la lista de aristas
-    public void listaAristas(){
+    public void printEdgelist(){       
         for(T key : adyacencylist.keySet()){
-            System.out.println("( " + key + " , " + adyacencylist.get(key) + " )");
+            LinkedList<Edge<T>> listaux = adyacencylist.get(key);            
+            for(Edge<T> edge : listaux){                
+                System.out.print("( "+key+" , "+edge.getVertice()+" ) ");           
+            }
+        }
+        System.out.println();
+    }
+
+    //Imprime la matriz de adyacencia
+    public void printAdyacencyMatrix(){
+        System.out.print("   ");
+        for(T key : adyacencylist.keySet()){
+            System.out.print(" "+key+" ");
+        }
+        System.out.println();
+        System.out.println("   ---------------------------");
+        for(T key : adyacencylist.keySet()){
+            System.out.print(key+"| ");
+            for(T key2 : adyacencylist.keySet()){
+                if(hasEdge(key, key2)){
+                    System.out.print(" 1 ");
+                }else{
+                    System.out.print( " 0 ");
+                }
+            }
+            System.out.println();
         }
     }
 }

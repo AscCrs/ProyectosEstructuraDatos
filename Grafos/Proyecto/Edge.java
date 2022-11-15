@@ -10,7 +10,7 @@ public class Edge<T> {
 		this.peso = w;
 	}
 
-	public T getVerticeConectado() {
+	public T getVertice(){
 		return verticeConectado;
 	}
 	
