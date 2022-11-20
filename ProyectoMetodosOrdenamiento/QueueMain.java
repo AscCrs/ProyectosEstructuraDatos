@@ -63,13 +63,14 @@ public class QueueMain {
                                         System.out.println(cola.bubbleSort());
                                         break;
                                     case 2:
-                                        System.out.println(cola.quicksort());
+                                        System.out.println(cola.quickSort());
                                         break;
                                     case 3:
                                         System.out.println(cola.shell());
                                         break;
                                     case 4:
                                         System.out.println(cola.radixSort());
+                                        break;
                                     default:
                                         break;
                                 }
