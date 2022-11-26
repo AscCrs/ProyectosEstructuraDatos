@@ -15,7 +15,7 @@ public class QueueMain {
                 if (size > 0) {
                     do {
                         System.out.println(
-                                "Menu de opciones: \n1.Agregar\n2.Eliminar\n3.Obtener Inicio\n4.Obtener Fin\n5.Salir");
+                                "Menu de opciones: \n1.Agregar\n2.Eliminar\n3.Obtener Inicio\n4.Obtener Fin\n5.Ordenamiento Interno\n6.Ordenamiento Externo\n7.Salir");
                         System.out.print("Ingrese una opcion: ");
                         opc = sc.nextInt();
                         switch (opc) {
@@ -56,6 +56,7 @@ public class QueueMain {
                                 System.out.flush();
                                 break;
                             case 5:
+                                System.out.println("1.BubbleSort\n2.QuickSort\n3.ShellSort\n4.RadixSort");
                                 System.out.print("Seleccione el metodo de ordenamiento que quiere aplicar: ");
                                 opc = sc.nextInt();
                                 switch (opc) {
@@ -74,7 +75,18 @@ public class QueueMain {
                                     default:
                                         break;
                                 }
+                                break;
                             case 6:
+                                System.out.println("1.MergeSort");
+                                System.out.print("Seleccione el metodo de ordenamiento que quiere aplicar: ");
+                                opc = sc.nextInt();
+                                switch(opc){
+                                    case 1:
+                                        cola.mergeSort();
+                                        break;
+                                }
+                                break;
+                            case 7:                                
                                 vVal = false;
                                 break;
                             default:

@@ -48,6 +48,11 @@ public class Queue {
         return (fin < 0);
     }
 
+    public void mergeSort(){
+        OrdenamientoExterno.sort(queue, 0, queue.length - 1);
+        OrdenamientoExterno.printArray(queue);
+    }
+
     public String bubbleSort(){
         return OrdenamientoInterno.bubbleSort(queue);
     }
