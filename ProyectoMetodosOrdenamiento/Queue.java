@@ -1,7 +1,6 @@
 /*
  * Programa de cola simple con arreglos
  */
-
 public class Queue {
     private int queue[];
     private int cabeza = 0;
@@ -46,6 +45,10 @@ public class Queue {
 
     private boolean isEmpty() {
         return (fin < 0);
+    }
+
+    public void naturalMergeSort(){
+        OrdenamientoExterno.Naturalsort(queue);     
     }
 
     public void mergeSort(){

@@ -5,7 +5,6 @@ public class OrdenamientoExterno {
      */
         public static void mergeSort(int [] arr){
             sort(arr, 0, arr.length - 1);
-            printArray(arr);
         }
         static void merge(int arr[], int l, int m, int r)
         {
@@ -88,14 +87,13 @@ public class OrdenamientoExterno {
                 }
             }
             System.out.println("]");
-            System.out.println();
         }
     
     /*
      * Natural Merge Sort
      */
 
-    private void merge(int[] source, int[] target, int startLeft, int startRight, int endRight) {
+    private static void merge(int[] source, int[] target, int startLeft, int startRight, int endRight) {
         int leftPos = startLeft;
         int rightPos = startRight;
         int targetPos = startLeft;
@@ -122,7 +120,7 @@ public class OrdenamientoExterno {
         }
       }
 
-    public void Naturalsort(int[] elements) {
+    public static void Naturalsort(int[] elements) {
         int numElements = elements.length;
       
         int[] tmp = new int[numElements];
@@ -165,9 +163,9 @@ public class OrdenamientoExterno {
           // Swap "from" and "to" arrays
           int[] help = from;
           from = to;
-          to = help;
+          to = help;         
         }
-      
+        printArray(elements);
         // If final run is not in "elements", copy it there
         if (from != elements) {
           System.arraycopy(from, 0, elements, 0, numElements);
