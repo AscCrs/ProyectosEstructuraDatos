@@ -1,19 +1,22 @@
 import java.util.Scanner;
-
+import java.util.Arrays;
 public class QueueMain {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
-        int size = 0, opc = 0;
+        Scanner w = new Scanner(System.in);
+        String wait, clean = "\033[H\033[2J";
+        int size = 0, opc = 0, dato;
         boolean vVal = true;
         char val;
-
-        try {
-            do {
+        System.out.println(clean);
+        do {
                 System.out.print("Ingrese el limite de datos a ingresar en la cola: ");
                 size = sc.nextInt();
                 Queue cola = new Queue(size);
                 if (size > 0) {
+                    int [] aux = new int [size];                    
                     do {
+                        System.out.print(clean);
                         System.out.println(
                                 "Menu de opciones: \n1.Agregar\n2.Eliminar\n3.Obtener Inicio\n4.Obtener Fin\n5.Ordenamiento Interno\n6.Ordenamiento Externo\n7.Salir");
                         System.out.print("Ingrese una opcion: ");
@@ -25,40 +28,37 @@ public class QueueMain {
                                 } else {
                                     for (int i = 0; i < size; i++) {
                                         System.out.print("Ingrese el dato: " + (i + 1) + " : ");
-                                        cola.push(sc.nextInt());
+                                        dato = sc.nextInt();
+                                        cola.push(dato);
+                                        aux[i] = dato;
                                     }
                                 }
                                 System.out.println("Datos agregados correcamente!");
-                                Thread.sleep(2000);
-                                System.out.print("\033[H\033[2J");
                                 System.out.flush();
                                 break;
                             case 2:
                                 System.out.print("Desea eliminar el ultimo elemento añadido (Y/n)? ");
                                 val = sc.next().charAt(0);
-                                if (val == 'Y' || val == 'y') {
+                                if (val == 'Y' || val == 'y') {                                     
                                     System.out.println("Acaba de eliminar " + cola.pop());
                                 }
-                                Thread.sleep(2000);
-                                System.out.print("\033[H\033[2J");
                                 System.out.flush();
                                 break;
                             case 3:
                                 System.out.println("El inicio de la cola es " + cola.getCabeza());
-                                Thread.sleep(2000);
-                                System.out.print("\033[H\033[2J");
                                 System.out.flush();
                                 break;
                             case 4:
                                 System.out.println("El fin de la cola es " + cola.getFin());
-                                Thread.sleep(2000);
-                                System.out.print("\033[H\033[2J");
                                 System.out.flush();
                                 break;
                             case 5:
+                                System.out.print(clean);
                                 System.out.println("1.BubbleSort\n2.QuickSort\n3.ShellSort\n4.RadixSort");
                                 System.out.print("Seleccione el metodo de ordenamiento que quiere aplicar: ");
                                 opc = sc.nextInt();
+                                System.out.println("El arreglo original es: "+Arrays.toString(aux));
+                                System.out.print("El arreglo ordenado es: ");
                                 switch (opc) {
                                     case 1:
                                         System.out.println(cola.bubbleSort());
@@ -77,9 +77,12 @@ public class QueueMain {
                                 }
                                 break;
                             case 6:
+                                System.out.print(clean);
                                 System.out.println("1.MergeSort\n2.Natural MergeSort\n3.In-place MergeSort");
                                 System.out.print("Seleccione el metodo de ordenamiento que quiere aplicar: ");
-                                opc = sc.nextInt();
+                                opc = sc.nextInt();                                
+                                System.out.println("El arreglo original es: "+Arrays.toString(aux));
+                                System.out.print("El arreglo ordenado es: ");
                                 switch(opc){
                                     case 1:
                                         cola.mergeSort();
@@ -97,16 +100,15 @@ public class QueueMain {
                                 break;
                             default:
                                 break;
-                        }
+                        }                        
+                        System.out.print("\n - - - - PRESIONE ENTER PARA CONTINUAR - - - - ");
+                        wait = w.nextLine();
                     } while (vVal == true);
                 } else {
                     System.out.println("Ingrese valor valido");
                 }
             } while (vVal == true);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
+        w.close();
         sc.close();
     }
 }
