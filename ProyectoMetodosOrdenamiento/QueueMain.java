@@ -77,7 +77,7 @@ public class QueueMain {
                                 }
                                 break;
                             case 6:
-                                System.out.println("1.MergeSort\n2.Natural MergeSort");
+                                System.out.println("1.MergeSort\n2.Natural MergeSort\n3.In-place MergeSort");
                                 System.out.print("Seleccione el metodo de ordenamiento que quiere aplicar: ");
                                 opc = sc.nextInt();
                                 switch(opc){
@@ -86,6 +86,9 @@ public class QueueMain {
                                         break;
                                     case 2:
                                         cola.naturalMergeSort();
+                                        break;
+                                    case 3:
+                                        cola.intPlaceSort();
                                         break;
                                 }
                                 break;

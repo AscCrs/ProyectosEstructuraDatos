@@ -47,6 +47,10 @@ public class Queue {
         return (fin < 0);
     }
 
+    public void intPlaceSort(){
+        OrdenamientoExterno.inplaceSort(queue);
+    }
+
     public void naturalMergeSort(){
         OrdenamientoExterno.Naturalsort(queue);     
     }

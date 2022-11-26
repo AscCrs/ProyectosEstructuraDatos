@@ -176,13 +176,7 @@ public class OrdenamientoExterno {
        * In place sort
        */
 
-    public class InplaceSort {
-	// Merges two subarrays of arr[].
-	// First subarray is arr[l..m]
-	// Second subarray is arr[m+1..r]
-	// Inplace Implementation
-	static void merge(int arr[], int start, int mid,
-					int end)
+       static void Imerge(int arr[], int start, int mid, int end)
 	{
 		int start2 = mid + 1;
 
@@ -233,29 +227,13 @@ public class OrdenamientoExterno {
 			mergeSort(arr, l, m);
 			mergeSort(arr, m + 1, r);
 
-			merge(arr, l, m, r);
+			Imerge(arr, l, m, r);
 		}
 	}
-
-	/* UTILITY FUNCTIONS */
-	/* Function to print an array */
-	static void printArray(int A[], int size)
-	{
-		int i;
-		for (i = 0; i < size; i++)
-			System.out.print(A[i] + " ");
-		System.out.println();
-	}
-
-	/* Driver program to test above functions */
-	public static void main(String[] args)
-	{
-		int arr[] = { 12, 11, 13, 5, 6, 7 };
-		int arr_size = arr.length;
-
-		mergeSort(arr, 0, arr_size - 1);
-		printArray(arr, arr_size);
-	}
+    public static void inplaceSort(int [] arr){
+        mergeSort(arr, 0, arr.length - 1);
+        printArray(arr);
+    }
 }
 
-}
+
