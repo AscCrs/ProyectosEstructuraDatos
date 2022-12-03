@@ -47,32 +47,32 @@ public class Queue {
         return (fin < 0);
     }
 
-    public void intPlaceSort(){
+    public void intPlaceSort() {
         OrdenamientoExterno.inplaceSort(queue);
     }
 
-    public void naturalMergeSort(){
-        OrdenamientoExterno.Naturalsort(queue);     
+    public void naturalMergeSort() {
+        OrdenamientoExterno.Naturalsort(queue);
     }
 
-    public void mergeSort(){
+    public void mergeSort() {
         OrdenamientoExterno.sort(queue, 0, queue.length - 1);
         OrdenamientoExterno.printArray(queue);
     }
 
-    public String bubbleSort(){
+    public String bubbleSort() {
         return OrdenamientoInterno.bubbleSort(queue);
     }
 
-    public String quickSort(){
+    public String quickSort() {
         return OrdenamientoInterno.quicksort(queue);
     }
 
-    public String radixSort(){
+    public String radixSort() {
         return OrdenamientoInterno.radixSort(queue);
     }
-    
-    public String shell(){
+
+    public String shell() {
         return OrdenamientoInterno.shell(queue);
     }
 

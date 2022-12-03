@@ -1,7 +1,8 @@
 import java.util.Arrays;
-public class OrdenamientoInterno {    
 
-    public static String bubbleSort(int [] queue){
+public class OrdenamientoInterno {
+
+    public static String bubbleSort(int[] queue) {
         int[] aux = queue;
         sortArray(aux);
         return Arrays.toString(aux);
@@ -44,7 +45,7 @@ public class OrdenamientoInterno {
         }
     }
 
-    public static String quicksort(int [] queue) {
+    public static String quicksort(int[] queue) {
         int[] aux = queue;
         quicksort(aux, 0, aux.length - 1);
         return Arrays.toString(aux);
@@ -58,7 +59,7 @@ public class OrdenamientoInterno {
         }
     }
 
-    public static String radixSort(int [] queue) {
+    public static String radixSort(int[] queue) {
         int[] arr = queue;
         int m = getMax(arr);
         for (int exp = 1; m / exp > 0; exp *= 10)
@@ -89,7 +90,7 @@ public class OrdenamientoInterno {
         }
     }
 
-    public static String shell(int [] queue) {
+    public static String shell(int[] queue) {
         int[] aux = queue;
         shellaux(aux);
         return Arrays.toString(aux);
