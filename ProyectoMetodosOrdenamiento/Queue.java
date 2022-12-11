@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /*
  * Programa de cola simple con arreglos
  */
@@ -45,6 +47,10 @@ public class Queue {
 
     private boolean isEmpty() {
         return (fin < 0);
+    }
+
+    public String printArray() {
+        return Arrays.toString(queue);
     }
 
     public void intPlaceSort() {

@@ -2,13 +2,24 @@ import java.util.Scanner;
 import java.util.Arrays;
 
 public class QueueMain {
+    static Scanner sc = new Scanner(System.in);
+    static Scanner w = new Scanner(System.in);
+    static int size = 0, opc = 0, dato;
+    static boolean vVal = true;
+    static char val;
+    static String clean = "\033[H\033[2J";
+    public static void clean() {
+        sc.nextLine();
+        System.out.println("\n\t\tPRESIONE ENTER PARA CONTINUAR... ");
+        sc.nextLine();
+
+        System.out.println(clean);
+    }
+
+    static void menu() {
+        
+    }
     public static void main(String[] args) throws Exception {
-        Scanner sc = new Scanner(System.in);
-        Scanner w = new Scanner(System.in);
-        String clean = "\033[H\033[2J";
-        int size = 0, opc = 0, dato;
-        boolean vVal = true;
-        char val;
         System.out.println(clean);
         do {
             System.out.print("Ingrese el limite de datos a ingresar en la cola: ");
@@ -19,7 +30,7 @@ public class QueueMain {
                 do {
                     System.out.print(clean);
                     System.out.println(
-                            "Menu de opciones: \n1.Agregar\n2.Eliminar\n3.Obtener Inicio\n4.Obtener Fin\n5.Ordenamiento Interno\n6.Ordenamiento Externo\n7.Salir");
+                            "Menu de opciones: \n1.Agregar\n2.Eliminar\n3.Obtener Inicio\n4.Obtener Fin\n5.Mostrar los elementos de la cola\n6.Ordenamiento Interno\n7.Ordenamiento Externo\n8.Salir");
                     System.out.print("Ingrese una opcion: ");
                     opc = sc.nextInt();
                     switch (opc) {
@@ -54,6 +65,10 @@ public class QueueMain {
                             System.out.flush();
                             break;
                         case 5:
+                            System.out.println("Los elementos de la cola son: ");
+                            System.out.println(cola.printArray());
+                            break;
+                        case 6:
                             System.out.print(clean);
                             System.out.println("1.BubbleSort\n2.QuickSort\n3.ShellSort\n4.RadixSort");
                             System.out.print("Seleccione el metodo de ordenamiento que quiere aplicar: ");
@@ -77,7 +92,7 @@ public class QueueMain {
                                     break;
                             }
                             break;
-                        case 6:
+                        case 7:
                             System.out.print(clean);
                             System.out.println("1.MergeSort\n2.Natural MergeSort\n3.In-place MergeSort");
                             System.out.print("Seleccione el metodo de ordenamiento que quiere aplicar: ");
@@ -96,7 +111,7 @@ public class QueueMain {
                                     break;
                             }
                             break;
-                        case 7:
+                        case 8:
                             vVal = false;
                             break;
                         default:
