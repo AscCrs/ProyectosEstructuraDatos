@@ -76,4 +76,12 @@ public class Queue {
         return OrdenamientoInterno.shell(queue);
     }
 
+    public int linealSearch(int n) {
+        return Busquedas.linealSearch(queue, n);
+    }
+
+    public int binarySearch(int n) {
+        int[] arr = OrdenamientoInterno.squicksort(queue);
+        return Busquedas.binarySearch(arr, 0, arr.length - 1, n);
+    }
 }

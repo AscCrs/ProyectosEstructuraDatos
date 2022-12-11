@@ -1,7 +1,6 @@
 import java.util.Arrays;
 
 public class OrdenamientoInterno {
-
     public static String bubbleSort(int[] queue) {
         int[] aux = queue;
         sortArray(aux);
@@ -43,6 +42,12 @@ public class OrdenamientoInterno {
             izq++;
             der--;
         }
+    }
+
+    public static int[] squicksort(int[] queue) {
+        int[] aux = queue;
+        quicksort(aux, 0, aux.length - 1);
+        return aux;
     }
 
     public static String quicksort(int[] queue) {
