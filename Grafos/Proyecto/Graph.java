@@ -4,7 +4,6 @@ import java.util.*;
 
 public class Graph<T> {
     Map<T, LinkedList<Edge<T>>> adyacencylist;
-    boolean dirigido;
 
     // Constructor
     public Graph() {
