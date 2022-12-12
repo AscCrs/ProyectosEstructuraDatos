@@ -4,7 +4,7 @@ public class Busquedas {
         int[] aux = queue;
         for (int i = 0; i < aux.length; i++) {
             if (aux[i] == elemento)
-                return i;
+                return i+1;
         }
         return -1;
     }
