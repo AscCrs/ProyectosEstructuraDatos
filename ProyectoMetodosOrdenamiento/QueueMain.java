@@ -8,6 +8,7 @@ public class QueueMain {
     static boolean vVal = true;
     static char val;
     static String clean = "\033[H\033[2J";
+
     public static void clean() {
         sc.nextLine();
         System.out.println("\n\t\tPRESIONE ENTER PARA CONTINUAR... ");
@@ -17,8 +18,9 @@ public class QueueMain {
     }
 
     static void menu() {
-        
+
     }
+
     public static void main(String[] args) throws Exception {
         System.out.println(clean);
         do {
