@@ -5,7 +5,6 @@ public class Estructuras {
         Scanner sc = new Scanner(System.in);
         int dato;
         int size = aux.length;
-        boolean vVal = true;
         char val;
         String clean = "\033[H\033[2J";
         System.out.println(
@@ -130,11 +129,13 @@ public class Estructuras {
                                 }
                             break;
                         case 9:
+                            sc.close();
                             return false;
                         default:
                                 System.out.println("Ingrese una opcion valida");
                             break;
                     }
+                    sc.close();
                     return true;        
     }
 }
