@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
 public class QueueMain {
-    static Scanner sc = new Scanner(System.in);
-    static Scanner w = new Scanner(System.in);
-    static int size = 0, opc = 0;
-    static boolean vVal = true;
+    static Scanner sc = new Scanner(System.in); 
+    static Scanner w = new Scanner(System.in); 
+    static int size = 0, opc = 0; 
+    static boolean vVal = true; 
     static String clean = "\033[H\033[2J";
     public static void main(String[] args) throws Exception {
         System.out.println(clean);
@@ -12,7 +12,7 @@ public class QueueMain {
             System.out.print("Ingrese el limite de datos a ingresar en la cola: ");
             size = sc.nextInt();
             Queue cola = new Queue(size);
-            if (size > 0) {
+            if (size > 0) { 
                 int[] aux = new int[size];
                 do {
                     vVal = Estructuras.Switch(opc, cola, aux);
