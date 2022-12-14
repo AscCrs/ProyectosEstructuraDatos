@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.Arrays;
 
 public class QueueMain {
     static Scanner sc = new Scanner(System.in);
@@ -8,19 +7,6 @@ public class QueueMain {
     static boolean vVal = true;
     static char val;
     static String clean = "\033[H\033[2J";
-
-    public static void clean() {
-        sc.nextLine();
-        System.out.println("\n\t\tPRESIONE ENTER PARA CONTINUAR... ");
-        sc.nextLine();
-
-        System.out.println(clean);
-    }
-
-    static void menu() {
-
-    }
-
     public static void main(String[] args) throws Exception {
         System.out.println(clean);
         do {
@@ -30,97 +16,10 @@ public class QueueMain {
             if (size > 0) {
                 int[] aux = new int[size];
                 do {
-                    System.out.print(clean);
-                    System.out.println(
-                            "Menu de opciones: \n1.Agregar\n2.Eliminar\n3.Obtener Inicio\n4.Obtener Fin\n5.Mostrar los elementos de la cola\n6.Ordenamiento Interno\n7.Ordenamiento Externo\n8.Salir");
-                    System.out.print("Ingrese una opcion: ");
-                    opc = sc.nextInt();
-                    switch (opc) {
-                        case 1:
-                            if (!(cola.size() <= size)) {
-                                throw new Exception("Error - Cola llena");
-                            } else {
-                                for (int i = 0; i < size; i++) {
-                                    System.out.print("Ingrese el dato: " + (i + 1) + " : ");
-                                    dato = sc.nextInt();
-                                    cola.push(dato);
-                                    aux[i] = dato;
-                                }
-                            }
-                            System.out.println("Datos agregados correcamente!");
-                            System.out.flush();
-                            break;
-                        case 2:
-                            System.out.print("Desea eliminar el ultimo elemento añadido (Y/n)? ");
-                            val = sc.next().charAt(0);
-                            if (val == 'Y' || val == 'y') {
-                                System.out.println("Acaba de eliminar " + cola.pop());
-                            }
-                            System.out.flush();
-                            break;
-                        case 3:
-                            System.out.println("El inicio de la cola es " + cola.getCabeza());
-                            System.out.flush();
-                            break;
-                        case 4:
-                            System.out.println("El fin de la cola es " + cola.getFin());
-                            System.out.flush();
-                            break;
-                        case 5:
-                            System.out.println("Los elementos de la cola son: ");
-                            System.out.println(cola.printArray());
-                            break;
-                        case 6:
-                            System.out.print(clean);
-                            System.out.println("1.BubbleSort\n2.QuickSort\n3.ShellSort\n4.RadixSort");
-                            System.out.print("Seleccione el metodo de ordenamiento que quiere aplicar: ");
-                            opc = sc.nextInt();
-                            System.out.println("El arreglo original es: " + Arrays.toString(aux));
-                            System.out.print("El arreglo ordenado es: ");
-                            switch (opc) {
-                                case 1:
-                                    System.out.println(cola.bubbleSort());
-                                    break;
-                                case 2:
-                                    System.out.println(cola.quickSort());
-                                    break;
-                                case 3:
-                                    System.out.println(cola.shell());
-                                    break;
-                                case 4:
-                                    System.out.println(cola.radixSort());
-                                    break;
-                                default:
-                                    break;
-                            }
-                            break;
-                        case 7:
-                            System.out.print(clean);
-                            System.out.println("1.MergeSort\n2.Natural MergeSort\n3.In-place MergeSort");
-                            System.out.print("Seleccione el metodo de ordenamiento que quiere aplicar: ");
-                            opc = sc.nextInt();
-                            System.out.println("El arreglo original es: " + Arrays.toString(aux));
-                            System.out.print("El arreglo ordenado es: ");
-                            switch (opc) {
-                                case 1:
-                                    cola.mergeSort();
-                                    break;
-                                case 2:
-                                    cola.naturalMergeSort();
-                                    break;
-                                case 3:
-                                    cola.intPlaceSort();
-                                    break;
-                            }
-                            break;
-                        case 8:
-                            vVal = false;
-                            break;
-                        default:
-                            break;
-                    }
+                    vVal = Estructuras.Switch(opc, cola, aux);
                     System.out.print("\n - - - - PRESIONE ENTER PARA CONTINUAR - - - - ");
                     w.nextLine();
+                    System.out.print(clean);
                 } while (vVal == true);
             } else {
                 System.out.println("Ingrese valor valido");
