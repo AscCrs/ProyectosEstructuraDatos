@@ -1,6 +1,6 @@
 public class Busquedas {
     // Metodo del algoritmo de busqueda secuencial
-    public static int linealSearch(int queue[], int elemento) { // O(n) - Complejidad
+    public static int linealSearch(int queue[], int elemento) { 
         int[] aux = queue; 
         for (int i = 0; i < aux.length; i++) {
             if (aux[i] == elemento)
@@ -10,8 +10,8 @@ public class Busquedas {
     }
 
     // Metodo del algoritmo de busqueda binaria
-    public static int binarySearch(int queue[], int l, int r, int x) { // Recursivo 
-        if (r >= l) { // Mejor de los casos O(nlogn), peor caso O(n2)
+    public static int binarySearch(int queue[], int l, int r, int x) {
+        if (r >= l) { 
             int mid = l + (r - l) / 2;
             if (queue[mid] == x)
                 return mid;
