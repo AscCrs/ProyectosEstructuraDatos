@@ -3,9 +3,8 @@ import java.util.Scanner;
 public class QueueMain {
     static Scanner sc = new Scanner(System.in);
     static Scanner w = new Scanner(System.in);
-    static int size = 0, opc = 0, dato;
+    static int size = 0, opc = 0;
     static boolean vVal = true;
-    static char val;
     static String clean = "\033[H\033[2J";
     public static void main(String[] args) throws Exception {
         System.out.println(clean);
