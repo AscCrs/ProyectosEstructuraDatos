@@ -2,8 +2,8 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Estructuras {
+    static Scanner sc = new Scanner(System.in);
     public static boolean Switch(int opc, Queue cola, int[] aux) throws Exception {
-        Scanner sc = new Scanner(System.in);
         int dato;
         int size = aux.length;
         char val;
@@ -15,7 +15,7 @@ public class Estructuras {
         switch (opc) {
             case 1:
                 if (!(cola.size() <= size)) {
-                    throw new Exception("Error - Cola llena");
+                    System.err.println("ERROR - COLA LLENA!");
                 } else {
                     for (int i = 0; i < size; i++) {
                         System.out.print("Ingrese el dato: " + (i + 1) + " : ");
@@ -132,13 +132,11 @@ public class Estructuras {
                 }
                 break;
             case 9:
-                sc.close();
                 return false;
             default:
                 System.out.println("Ingrese una opcion valida");
                 break;
         }
-        sc.close();
         return true;
     }
 }
