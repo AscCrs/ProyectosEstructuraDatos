@@ -88,6 +88,7 @@ public class Queue {
 
     public int binarySearch(int n) {
         int[] arr = OrdenamientoInterno.squicksort(queue);
-        return Busquedas.binarySearch(arr, 0, arr.length - 1, n);
+        int r = arr.length;
+        return Busquedas.binarySearch(arr, 0, r - 1, n) + 1;
     }
 }

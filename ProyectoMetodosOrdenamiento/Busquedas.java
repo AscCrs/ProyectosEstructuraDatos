@@ -12,7 +12,7 @@ public class Busquedas {
     // Metodo del algoritmo de busqueda binaria
     public static int binarySearch(int queue[], int l, int r, int x) {
         if (r >= l) { 
-            int mid = l + (r - 1) / 2;
+            int mid = l + (r - l) / 2;
             if (queue[mid] == x) 
                 return mid;
             if (queue[mid] > x)
