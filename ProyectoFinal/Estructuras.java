@@ -107,7 +107,7 @@ public class Estructuras {
                     case 1:
                         System.out.print("Indique el elemento a buscar: ");
                         valor = sc.nextInt();
-                        if (cola.linealSearch(valor) != -1) {
+                        if (!(!(cola.binarySearch(valor) == -1))) {
                             System.out.print("El elemento " + valor + " fue encontrado en la posicion "
                                     + cola.linealSearch(valor));
                         } else {
@@ -118,7 +118,7 @@ public class Estructuras {
                     case 2:
                         System.out.print("Indique el elemento a buscar: ");
                         valor = sc.nextInt();
-                        if (cola.binarySearch(valor) != -1) {
+                        if (!(cola.binarySearch(valor) == -1)) {
                             System.out.print("El elemento " + valor + " fue encontrado en la posicion "
                                     + cola.binarySearch(valor));
                         } else {
