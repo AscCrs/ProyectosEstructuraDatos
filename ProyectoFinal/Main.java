@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class QueueMain {
+public class Main {
     static Scanner sc = new Scanner(System.in); 
     static Scanner w = new Scanner(System.in); 
     static int size = 0, opc = 0; 
