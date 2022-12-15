@@ -8,6 +8,7 @@ public class MainTest {
         cola.push(1);
         cola.push(10);
 
-        System.out.println(cola.binarySearch(10));
+        //System.out.println(cola.binarySearch(10));
+        System.out.println(cola.linealSearch(10));
     }
 }
